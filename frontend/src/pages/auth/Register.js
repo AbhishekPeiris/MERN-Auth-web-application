@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from "./auth.module.scss"
 import Card from '../../components/card/Card';
 import { TiUserAddOutline } from 'react-icons/ti';
@@ -39,7 +39,43 @@ const Register = () => {
     const handleInputChange = (e) => {
         const {name, value} = e.target
         setFormData({...formData, [name]: value});
-    }
+    };
+
+    useEffect(() => {
+
+        // Check Lower and Uppercase
+        if(password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)){
+            setUCase(true)
+        }
+        else{
+            setUCase(false)
+        }
+
+        // Check For Numbers
+        if(password.match(/([0-9])/)){
+            setNum(true)
+        }
+        else{
+            setNum(false)
+        }
+
+        // Check For Special char
+        if(password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)){
+            setSChar(true)
+        }
+        else{
+            setSChar(false)
+        }
+
+        // Check For Password length
+        if(password.length > 5){
+            setPassLength(true)
+        }
+        else{
+            setPassLength(false)
+        }
+
+    }, [password])
 
     const loginUser = () => {
 
@@ -61,7 +97,9 @@ const Register = () => {
                         <PasswordInput placeholder='Confirm Password' name="password2" value={password2} onChange={handleInputChange} />
 
                         {/* Password Strength */}
+                        <br/>
                         <Card cardClass={styles.group}>
+                            <br/>
                             <ul className='form-list'>
                                 <li>
                                     <span className={styles.indicator}>
@@ -84,7 +122,9 @@ const Register = () => {
                                     </span>
                                 </li>
                             </ul>
+                            <br/>
                         </Card>
+                        <br/>
 
                         <button type='submit' className='--btn --btn-primary --btn-block'>Register</button>
                     </form>
