@@ -6,6 +6,7 @@ import Register from "./pages/auth/Register";
 import Forgot from "./pages/auth/Forgot";
 import Reset from "./pages/auth/Reset";
 import LoginWithCode from "./pages/auth/LoginWithCode";
+import Profile from "./pages/profile/Profile";
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
           <Route path="/forgot" element={<Forgot />}/>
           <Route path="/resetPassword/:resetToken" element={<Reset />}/>
           <Route path="/loginwithCode/:email" element={<LoginWithCode />}/>
+          <Route path="/profile" element={<Layout><Profile /></Layout>}/>
         </Routes>
       </BrowserRouter>
     </> 
