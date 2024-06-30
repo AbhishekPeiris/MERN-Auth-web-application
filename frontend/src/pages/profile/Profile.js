@@ -19,7 +19,7 @@ function Profile() {
 
     const [profile, setProfile] = useState(intitialState)
 
-    const handleChange = (e) => {
+    const handleImageChange = (e) => {
         
     }
 
@@ -44,7 +44,7 @@ function Profile() {
                         <form>
                             <p>
                                 <label>Change Photo:</label>
-                                <input type="file" accept='image/*' name="image" onChange={handleChange} />
+                                <input type="file" accept='image/*' name="image" onChange={handleImageChange} />
                             </p>
                             <p>
                                 <label>Name:</label>
