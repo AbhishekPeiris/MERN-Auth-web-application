@@ -60,7 +60,7 @@ function Profile() {
                                 <label>Bio:</label>
                                 <textarea name="bio" cols="30" rows="10" value={profile.bio} onChange={handleInputChange}></textarea>
                             </p>
-                            <button className='--btn --btn-primary --btn-block'>Update Profile</button>
+                            <button className='--btn --btn-primary --btn-block' style={{width:"95%",marginLeft:"10px",marginBottom:"10px"}}>Update Profile</button>
                         </form>
                     </>
                 </Card>
