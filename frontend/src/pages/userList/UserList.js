@@ -4,6 +4,7 @@ import PageMenu from '../../components/pageMenu/PageMenu'
 import UserStats from '../../components/userStats/UserStats'
 import Search from '../../components/search/Search'
 import { FaTrashAlt } from 'react-icons/fa'
+import ChangeRole from '../../components/changeRole/ChangeRole'
 
 function UserList() {
     return (
@@ -41,7 +42,7 @@ function UserList() {
                                 <td>abhisheklpeiris@gmail.com</td>
                                 <td>Admin</td>
                                 <td>
-                                    ChangeRole
+                                    <ChangeRole />
                                 </td>
                                 <td>
                                     <span>
