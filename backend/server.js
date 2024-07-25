@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
+const userRoute = require("./routes/userRoute");
 
 const app = express();
 
@@ -19,6 +20,8 @@ app.use(
     })
 );
 
+// Routes
+app.use("/api/users", userRoute)
 app.get("/", (req, res) => {
     res.send("Home Page");
 })
